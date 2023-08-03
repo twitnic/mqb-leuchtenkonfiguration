@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leuchtenkonfiguration MQB BCM</title>
+    <link href="css/bootstrap-grid.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+<body>
+<div class="container">
+    <h1>MQB BCM <span class="badge badge-secondary">Leuchtenkonfiguration</span></h1>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    Anpassungskanäle
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="textareaVorn">Front</label>
+                            <textarea id="textareaVorn" class="form-control" placeholder="21 34 00 ..."></textarea>
+                            <small id="vornHelp" class="form-text text-muted">IDE05145-Leuchtenkonfiguration</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="textareaHeck">Heck</label>
+                            <textarea id="textareaHeck" class="form-control" placeholder="0C 08 00 ..."></textarea>
+                            <small id="heckHelp" class="form-text text-muted">ENG141661-Leuchtenkonfiguration_Aussenlich_Heck</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="textareaSonstiges">Sonstiges</label>
+                            <textarea id="textareaSonstiges" class="form-control" placeholder="00 08 00 ..."></textarea>
+                            <small id="sonstigesHelp" class="form-text text-muted">ENG141662-Leuchtenkonfiguration_Sonstiges</small>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="demodaten">Demodaten</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <pre id="bcm1formatiert1"></pre>
+        </div>
+        <div class="col-md-6">
+            <pre id="bcm1formatiert2"></pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <nav>
+                <div class="nav nav-tabs" id="nav-raw" role="tablist">
+                    <a class="nav-item nav-link active" id="raw-vorn-tab" data-toggle="tab" href="#raw-vorn"
+                       role="tab" aria-controls="leuchte-vorn" aria-selected="true">vorn</a>
+                    <a class="nav-item nav-link" id="raw-hinten-tab" data-toggle="tab" href="#raw-hinten"
+                       role="tab" aria-controls="leuchte-hinten" aria-selected="false">hinten</a>
+                    <a class="nav-item nav-link" id="raw-sonstiges-tab" data-toggle="tab" href="#raw-sonstiges"
+                       role="tab" aria-controls="leuchte-sonstiges" aria-selected="false">Sonstiges</a>
+
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-rawContent">
+                <div class="tab-pane fade show active" id="raw-vorn" role="tabpanel" aria-labelledby="raw-vorn-tab">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th scope="col">Lampe</th>
+                            <th scope="col">Codierung</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">Leuchte 0 BLK VL B36</th>
+                            <td id="rawFront0" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte1BLK VRB20</th>
+                            <td id="rawFront1" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte2SL VLB10  </th>
+                            <td id="rawFront2" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte3SL VRB21</th>
+                            <td id="rawFront3" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte4TFL LB4</th>
+                            <td id="rawFront4" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte5 TFL RB32</th>
+                            <td id="rawFront5" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte6ABL LC5</th>
+                            <td id="rawFront6" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte7ABL RB1</th>
+                            <td id="rawFront7" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte8FL LB39</th>
+                            <td id="rawFront8" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte9FL RB2</th>
+                            <td id="rawFront9" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte10SHUTTER LB23</th>
+                            <td id="rawFront10" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte11SHUTTER RB22</th>
+                            <td id="rawFront11" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte12NL LB45</th>
+                            <td id="rawFront12" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte13NL RB5</th>
+                            <td id="rawFront13" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="raw-hinten" role="tabpanel" aria-labelledby="raw-hinten-tab">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th scope="col">Lampe</th>
+                            <th scope="col">Codierung</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">Leuchte18BLK HLA60</th>
+                            <td id="rawHeck18" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte19BLK HRC31</th>
+                            <td id="rawHeck19" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte20BR LA71</th>
+                            <td id="rawHeck20" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte21BR RC8</th>
+                            <td id="rawHeck21" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte22BR MA57</th>
+                            <td id="rawHeck22" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte23SL HLC10</th>
+                            <td id="rawHeck23" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte24SL HRA65</th>
+                            <td id="rawHeck24" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte25KZL HA59</th>
+                            <td id="rawHeck25" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte26NSL LA72</th>
+                            <td id="rawHeck26" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte27NSL RC6</th>
+                            <td id="rawHeck27" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte28RFL LC11</th>
+                            <td id="rawHeck28" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte29RFL RA64</th>
+                            <td id="rawHeck29" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="raw-sonstiges" role="tabpanel" aria-labelledby="raw-sonstiges-tab">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th scope="col">Lampe</th>
+                            <th scope="col">Codierung</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">Leuchte16BLK SLB35BLK SL KC9</th>
+                            <td id="rawSonstige16" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte17TFL R BLK SRB3TFL R BLK SR KC3</th>
+                            <td id="rawSonstige17" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte30FR LC72</th>
+                            <td id="rawSonstige30" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte31AMBL 1C61</th>
+                            <td id="rawSonstige31" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte32AMBL 2C35</th>
+                            <td id="rawSonstige32" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte33AMBL 3C36</th>
+                            <td id="rawSonstige33" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte34AMBL 4C37</th>
+                            <td id="rawSonstige34" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Leuchte35 LED Warnblinktaster C48</th>
+                            <td id="rawSonstige35" style='font-family: "Courier New", Courier, monospace;'></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="leuchte-vorn-tab" data-toggle="tab" href="#leuchte-vorn" role="tab" aria-controls="leuchte-vorn" aria-selected="true">vorn</a>
+                    <a class="nav-item nav-link" id="leuchte-hinten-tab" data-toggle="tab" href="#leuchte-hinten" role="tab" aria-controls="leuchte-hinten" aria-selected="false">hinten</a>
+                    <a class="nav-item nav-link" id="leuchte-sonstiges-tab" data-toggle="tab" href="#leuchte-sonstiges" role="tab" aria-controls="leuchte-sonstiges" aria-selected="false">Sonstiges</a>
+
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active"  id="leuchte-vorn" role="tabpanel" aria-labelledby="leuchte-vorn-tab">
+                    <table class="table table-bordered">
+                        <thead>
+                            <th>Leuchte</th>
+                            <th>Byte</th>
+                            <th>Bit</th>
+                            <th>Funktion</th>
+                            <th>Wert</th>
+                            <th>Raw</th>
+                        </thead>
+                        <tbody id="leuchte-vorn-container">
+<!-- hier wird via JS das Template eingefügt -->
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" role="tabpanel" id="leuchte-hinten" aria-labelledby="leuchte-hinten-tab">
+                    <table class="table table-bordered">
+                        <thead>
+                            <th>Leuchte</th>
+                            <th>Byte</th>
+                            <th>Bit</th>
+                            <th>Funktion</th>
+                            <th>Wert</th>
+                            <th>Raw</th>
+                        </thead>
+                        <tbody id="leuchte-heck-container">
+                        <!-- hier wird via JS das Template eingefügt -->
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" role="tabpanel" id="leuchte-sonstiges" aria-labelledby="leuchte-sonstiges-tab">
+                    <table class="table table-bordered">
+                        <thead>
+                            <th>Leuchte</th>
+                            <th>Byte</th>
+                            <th>Bit</th>
+                            <th>Funktion</th>
+                            <th>Wert</th>
+                            <th>Raw</th>
+                        </thead>
+                        <tbody id="leuchte-sonstiges-container">
+                        <!-- hier wird via JS das Template eingefügt -->
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p>Geänderte Bytes</p>
+            <textarea id="bcmchanges" disabled style="width: 100%"></textarea>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            Sources
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="https://forums.ross-tech.com/index.php?threads/19822/page-2" class="btn btn-primary" target="_blank">Forum by Rosstech</a>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery.loadTemplate.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script type="module" src="js/app.js"></script>
+<script type="module" src="js/leuchte.js"></script>
+
+<!-- https://github.com/codepb/jquery-template -->
+<!-- http://codepb.github.io/jquery-template/ -->
+</body>
+</html>
