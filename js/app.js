@@ -1,5 +1,6 @@
 import Leuchte from './leuchte.js';
 (function ($) {
+    'use strict';
     $.ajaxSetup ({
         // Disable caching of AJAX responses
         cache: false
@@ -27,7 +28,7 @@ import Leuchte from './leuchte.js';
         $("#demodaten").click(function () {
             $("#textareaVorn").html('21 34 00 14 02 00 7F 03 00 00 00 00 00 00 00 00 21 3E 00 15 04 00 7F 05 00 00 00 00 00 00 00 00 04 48 00 4A 08 09 23 1E 14 64 00 06 A3 00 00 00 04 4C 00 4C 08 0A 23 1E 14 64 00 07 A3 00 00 00 01 48 00 49 14 1E 7F 08 09 7F 00 00 00 00 00 00 01 4C 00 4B 14 1E 7F 08 0A 7F 00 00 00 00 00 00 05 49 00 1A 0B 00 7F 0F 00 7F 1E 00 7F 00 00 00 05 4D 00 1B 0C 00 7F 0F 00 7F 1E 00 7F 00 00 00 06 37 00 1C 0D 0F 7F 00 00 00 00 00 00 00 00 00 06 41 00 1D 0E 0F 7F 00 00 00 00 00 00 00 00 00 02 52 00 55 0D 0F 64 0B 1E 64 00 00 00 00 00 00 02 53 00 56 0E 0F 64 0C 1E 64 00 00 00 00 00 00 0A 38 00 22 12 16 64 00 00 00 00 00 00 00 00 00 0A 42 00 23 13 17 64 00 00 00 00 00 00 00 00 00').trigger('change');
             $("#textareaHeck").html('0C 08 00 16 02 00 64 03 00 00 00 00 00 00 00 00 0C 18 00 18 04 00 64 05 00 00 00 00 00 00 00 00 27 09 00 2B 18 00 7F 00 00 00 00 00 00 00 00 00 27 19 00 2D 18 00 7F 00 00 00 00 00 00 00 00 00 2A 00 00 2C 18 00 64 00 00 00 00 00 00 00 00 00 25 10 00 29 08 09 7F 1E 00 7F 00 00 00 00 00 00 25 20 00 2A 08 0A 7F 1E 00 7F 00 00 00 00 00 00 2B 28 00 30 08 1E 7F 00 00 00 00 00 00 00 00 00 25 0A 00 35 08 09 FF 1E 00 7F 00 00 00 00 00 00 25 1A 00 36 08 0A FF 1E 00 7F 00 00 00 00 00 00 09 0C 00 33 1A 00 E4 00 00 00 00 00 00 00 00 00 09 1B 00 34 19 00 E4 00 00 00 00 00 00 00 00 00').trigger('change');
-            $("#textareaSonstiges").html('00 08 00 41 02 00 FF 03 00 80 00 00 00 00 00 00 30 18 00 42 04 00 FF 05 00 80 00 00 00 00 00 00 2E 00 00 02 2B 00 64 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 29 00 00 06 4C 00 64 00 00 00 00 00 00 00 00 00').trigger('change');
+            $("#textareaSonstiges").html('30 08 00 41 02 00 FF 03 00 80 00 00 00 00 00 00 30 18 00 42 04 00 FF 05 00 80 00 00 00 00 00 00 2E 00 00 02 2B 00 64 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 29 00 00 06 4C 00 64 00 00 00 00 00 00 00 00 00').trigger('change');
         });
     });
 
@@ -96,9 +97,6 @@ import Leuchte from './leuchte.js';
             $('#rawFront' + key).text(leuchtenFront[key].bytes);
         }
 
-        console.log("Vorne:");
-        console.log(leuchtenFront);
-
         $("#leuchte-vorn-container").loadTemplate(
             "template/leuchten.html",
             leuchtenFront,
@@ -127,9 +125,6 @@ import Leuchte from './leuchte.js';
             zaehler++;
         }
 
-        console.log("Hinten:");
-        console.log(leuchtenHinten);
-
         $("#leuchte-heck-container").loadTemplate(
             "template/leuchten.html",
             leuchtenHinten,
@@ -157,9 +152,6 @@ import Leuchte from './leuchte.js';
             bit+=16;
             zaehler++;
         }
-
-        console.log("Sonstiges:");
-        console.log(leuchtenSonstiges);
 
         $("#leuchte-sonstiges-container").loadTemplate(
             "template/leuchten.html",

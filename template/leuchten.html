@@ -4,19 +4,22 @@
     <td>-</td>
     <td>[LO]_Lasttyp <span data-content="index"></span></td>
     <td>
-        <span data-content="lasttyp"></span>
+        ausgelesen: <pre><span data-content-text="lasttyp"></span></pre>
+        <select class="form-control"
+            data-value="lasttyp"
+            data-template-bind='{"attribute": "options", "value": {"data": "lasttypdefinition", "value":"value", "content":"content"}}'></select>
     </td>
     <td>
         <div class="input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="lasttypHex">Hex</span>
             </div>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" readonly>
             <br>
             <div class="input-group-prepend">
                 <span class="input-group-text" id="lasttypeDec">Dec</span>
             </div>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" data-value="lasttyp">
         </div>
     </td>
 </tr>
@@ -25,19 +28,15 @@
     <td>-</td>
     <td>[LO]_Lampendefektbit Position <span data-content="index"></span></td>
     <td>
-        <span data-content="lampendefektbiposition"></span>
+        ausgelesen: <pre><span data-content="lampendefektbiposition"></span></pre>
+        <small class="form-text text-muted">hier wird der hex statt des dec Wert genutzt</small>
     </td>
     <td>
         <div class="input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="">Hex</span>
             </div>
-            <input type="text" class="form-control">
-            <br>
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="">Dec</span>
-            </div>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" data-value="lampendefektbiposition">
         </div>
     </td>
 </tr>
@@ -48,7 +47,20 @@
         ----
     </td>
     <td>
-        <span data-content="reserved"></span>
+        <pre><span data-content="reserved"></span></pre>
+    </td>
+    <td>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Hex</span>
+            </div>
+            <input type="text" class="form-control" value="00" readonly>
+            <br>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Dec</span>
+            </div>
+            <input type="text" class="form-control" value="00" readonly>
+        </div>
     </td>
 </tr>
 <tr>
@@ -56,7 +68,16 @@
     <td>-</td>
     <td>[LO]_Fehlerort mittleres Byte DTC-DFCC <span data-content="index"></span></td>
     <td>
-        <span data-content="fehlerort"></span>
+        ausgelesen: <pre><span data-content="fehlerort"></span></pre>
+        <small class="form-text text-muted">hier wird der hex statt des dec Wert genutzt</small>
+    </td>
+    <td>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Hex</span>
+            </div>
+            <input type="text" class="form-control" data-value="fehlerort">
+        </div>
     </td>
 </tr>
 <tr>
@@ -64,7 +85,24 @@
     <td>-</td>
     <td>[LO]_Lichtfunktion A <span data-content="index"></span></td>
     <td>
-        <span data-content="lichtfunktionA"></span>
+        ausgelesen: <pre><span data-content="lichtfunktionA"></span></pre>
+        <select class="form-control"
+            data-value="lichtfunktionA"
+            data-template-bind='{"attribute": "options", "value": {"data": "lichtfunktiondefinition", "value":"value", "content":"content"}}'>
+        </select>
+    </td>
+    <td>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Hex</span>
+            </div>
+            <input type="text" class="form-control" readonly>
+            <br>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Dec</span>
+            </div>
+            <input type="text" class="form-control" data-value="lichtfunktionA">
+        </div>
     </td>
 </tr>
 <tr>
@@ -72,7 +110,25 @@
     <td>-</td>
     <td>[LO]_Lichtfunktion B <span data-content="index"></span></td>
     <td>
-        <span data-content="lichtfunktionB"></span>
+        ausgelesen: <pre><span data-content="lichtfunktionB"></span></pre>
+        <br>
+        <select class="form-control"
+            data-value="lichtfunktionB"
+            data-template-bind='{"attribute": "options", "value": {"data": "lichtfunktiondefinition", "value":"value", "content":"content"}}'>
+        </select>
+    </td>
+    <td>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Hex</span>
+            </div>
+            <input type="text" class="form-control" value="00" readonly>
+            <br>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Dec</span>
+            </div>
+            <input type="text" class="form-control" data-value="lichtfunktionB">
+        </div>
     </td>
 </tr>
 <tr>
@@ -80,7 +136,21 @@
     <td>0-6</td>
     <td>[LO]_Dimmwert AB <span data-content="index"></span></td>
     <td>
-        <span data-content="dimmwertab"></span>
+        ausgelesen:
+        <pre><span data-content="dimmwertAB"></span></pre>
+    </td>
+    <td>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Hex</span>
+            </div>
+            <input type="text" class="form-control" value="---" readonly>
+            <br>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Dec</span>
+            </div>
+            <input type="number" max="127" class="form-control" data-value="dimmwertAB">
+        </div>
     </td>
 </tr>
 <tr>
@@ -88,7 +158,24 @@
     <td>7</td>
     <td>[LO]_Lichtansteuerung HD AB <span data-content="index"></span></td>
     <td>
-        <span data-content="lichtansteurerungab"></span>
+        ausgelesen: <pre><span data-content="lichtansteurerungAB"></span></pre>
+        <select class="form-control"
+            data-value="lichtansteurerungAB"
+            data-template-bind='{"attribute": "options", "value": {"data": "lichtansteuerung", "value":"value", "content":"content"}}'>
+        </select>
+    </td>
+    <td>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Hex</span>
+            </div>
+            <input type="text" class="form-control" value="--" readonly>
+            <br>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Dec</span>
+            </div>
+            <input type="text" class="form-control" data-value="lichtansteurerungAB">
+        </div>
     </td>
 </tr>
 <tr>
@@ -96,7 +183,24 @@
     <td>-</td>
     <td>[LO]_Lichtfunktion C <span data-content="index"></span></td>
     <td>
-        <span data-content="lichtfunktionC"></span>
+        ausgelesen: <pre><span data-content="lichtfunktionC"></span></pre>
+        <select class="form-control"
+            data-value="lichtfunktionC"
+            data-template-bind='{"attribute": "options", "value": {"data": "lichtfunktiondefinition", "value":"value", "content":"content"}}'>
+        </select>
+    </td>
+    <td>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Hex</span>
+            </div>
+            <input type="text" class="form-control" value="00" readonly>
+            <br>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Dec</span>
+            </div>
+            <input type="text" class="form-control" data-value="lichtfunktionC">
+        </div>
     </td>
 </tr>
 <tr>
@@ -104,7 +208,24 @@
     <td>-</td>
     <td>[LO]_Lichtfunktion D <span data-content="index"></span></td>
     <td>
-        <span data-content="lichtfunktionD"></span>
+        ausgelesen: <pre><span data-content="lichtfunktionD"></span></pre>
+        <select class="form-control"
+            data-value="lichtfunktionD"
+            data-template-bind='{"attribute": "options", "value": {"data": "lichtfunktiondefinition", "value":"value", "content":"content"}}'>
+        </select>
+    </td>
+    <td>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Hex</span>
+            </div>
+            <input type="text" class="form-control" value="00" readonly>
+            <br>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Dec</span>
+            </div>
+            <input type="text" class="form-control" data-value="lichtfunktionD">
+        </div>
     </td>
 </tr>
 <tr>
@@ -112,15 +233,45 @@
     <td>0-6</td>
     <td>[LO]_Dimmwert CD <span data-content="index"></span></td>
     <td>
-        <span data-content="dimmwertcd"></span>
+        ausgelesen: <pre><span data-content="dimmwertCD"></span></pre>
+    </td>
+    <td>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Hex</span>
+            </div>
+            <input type="text" class="form-control" value="---" readonly>
+            <br>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Dec</span>
+            </div>
+            <input type="number" class="form-control" max="127" data-value="dimmwertCD">
+        </div>
     </td>
 </tr>
 <tr>
     <td>9</td>
     <td>7</td>
-    <td>[LO]_Lichtansteuerung HD CD <span data-content="index"></span></td>
+    <td>[LO]_Dimming Direction HD CD <span data-content="index"></span></td>
     <td>
-        <span data-content="lichtansteurerungcd"></span>
+        ausgelesen: <pre><span data-content="dimmingdirectionCD"></span></pre>
+        <select class="form-control"
+            data-value="dimmingdirectionCD"
+            data-template-bind='{"attribute": "options", "value": {"data": "dimmingdirection", "value":"value", "content":"content"}}'>
+        </select>
+    </td>
+    <td>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Hex</span>
+            </div>
+            <input type="text" class="form-control" value="---" readonly>
+            <br>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Dec</span>
+            </div>
+            <input type="text" class="form-control" data-value="dimmingdirectionCD">
+        </div>
     </td>
 </tr>
 <tr>
@@ -128,7 +279,24 @@
     <td>-</td>
     <td>[LO]_Lichtfunktion E <span data-content="index"></span></td>
     <td>
-        <span data-content="lichtfunktionE"></span>
+        ausgelesen: <pre><span data-content="lichtfunktionE"></span></pre>
+        <select class="form-control"
+            data-value="lichtfunktionE"
+            data-template-bind='{"attribute": "options", "value": {"data": "lichtfunktiondefinition", "value":"value", "content":"content"}}'>
+        </select>
+    </td>
+    <td>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Hex</span>
+            </div>
+            <input type="text" class="form-control" value="00" readonly>
+            <br>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Dec</span>
+            </div>
+            <input type="text" class="form-control" data-value="lichtfunktionE">
+        </div>
     </td>
 </tr>
 <tr>
@@ -136,7 +304,24 @@
     <td>-</td>
     <td>[LO]_Lichtfunktion F <span data-content="index"></span></td>
     <td>
-        <span data-content="lichtfunktionF"></span>
+        ausgelesen: <pre><span data-content="lichtfunktionF"></span></pre>
+        <select class="form-control"
+            data-value="lichtfunktionF"
+            data-template-bind='{"attribute": "options", "value": {"data": "lichtfunktiondefinition", "value":"value", "content":"content"}}'>
+        </select>
+    </td>
+    <td>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Hex</span>
+            </div>
+            <input type="text" class="form-control" value="00" readonly>
+            <br>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Dec</span>
+            </div>
+            <input type="text" class="form-control" data-value="lichtfunktionF">
+        </div>
     </td>
 </tr>
 <tr>
@@ -144,15 +329,45 @@
     <td>0-6</td>
     <td>[LO]_Dimmwert EF <span data-content="index"></span></td>
     <td>
-        <span data-content="dimmwertef"></span>
+        ausgelesen: <pre><span data-content="dimmwertEF"></span></pre>
+    </td>
+    <td>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Hex</span>
+            </div>
+            <input type="text" class="form-control" value="---" readonly>
+            <br>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Dec</span>
+            </div>
+            <input type="number" class="form-control" max="127" data-value="dimmwertEF">
+        </div>
     </td>
 </tr>
 <tr>
     <td>12</td>
     <td>7</td>
-    <td>[LO]_Lichtansteuerung HD EF <span data-content="index"></span></td>
+    <td>[LO]_Dimming Direction HD EF <span data-content="index"></span></td>
     <td>
-        <span data-content="lichtansteurerungef"></span>
+        ausgelesen: <pre><span data-content="dimmingdirectionEF"></span></pre>
+        <select class="form-control"
+            data-value="dimmingdirectionEF"
+            data-template-bind='{"attribute": "options", "value": {"data": "dimmingdirection", "value":"value", "content":"content"}}'>
+        </select>
+    </td>
+    <td>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Hex</span>
+            </div>
+            <input type="text" class="form-control" value="---" readonly>
+            <br>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Dec</span>
+            </div>
+            <input type="text" class="form-control" data-value="dimmingdirectionEF">
+        </div>
     </td>
 </tr>
 <tr>
@@ -160,7 +375,24 @@
     <td>-</td>
     <td>[LO]_Lichtfunktion G <span data-content="index"></span></td>
     <td>
-        <span data-content="lichtfunktionG"></span>
+        ausgelesen: <pre><span data-content="lichtfunktionG"></span></pre>
+        <select class="form-control"
+            data-value="lichtfunktionG"
+            data-template-bind='{"attribute": "options", "value": {"data": "lichtfunktiondefinition", "value":"value", "content":"content"}}'>
+        </select>
+    </td>
+    <td>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Hex</span>
+            </div>
+            <input type="text" class="form-control" value="00" readonly>
+            <br>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Dec</span>
+            </div>
+            <input type="text" class="form-control" data-value="lichtfunktionG">
+        </div>
     </td>
 </tr>
 <tr>
@@ -168,7 +400,24 @@
     <td>-</td>
     <td>[LO]_Lichtfunktion H <span data-content="index"></span></td>
     <td>
-        <span data-content="lichtfunktionH"></span>
+        ausgelesen: <pre><span data-content="lichtfunktionH"></span></pre>
+        <select class="form-control"
+            data-value="lichtfunktionH"
+            data-template-bind='{"attribute": "options", "value": {"data": "lichtfunktiondefinition", "value":"value", "content":"content"}}'>
+        </select>
+    </td>
+    <td>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Hex</span>
+            </div>
+            <input type="text" class="form-control" value="00" readonly>
+            <br>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Dec</span>
+            </div>
+            <input type="text" class="form-control" data-value="lichtfunktionH">
+        </div>
     </td>
 </tr>
 <tr>
@@ -176,15 +425,45 @@
     <td>0-6</td>
     <td>[LO]_Dimmwert GH <span data-content="index"></span></td>
     <td>
-        <span data-content="dimmwertgh"></span>
+        ausgelesen: <pre><span data-content="dimmwertGH"></span></pre>
+    </td>
+    <td>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Hex</span>
+            </div>
+            <input type="text" class="form-control" value="---" readonly>
+            <br>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Dec</span>
+            </div>
+            <input type="number" class="form-control" max="127" data-value="dimmwertGH">
+        </div>
     </td>
 </tr>
 <tr>
     <td>15</td>
     <td>7</td>
-    <td>[LO]_Lichtansteuerung HD GH <span data-content="index"></span></td>
+    <td>[LO]_Dimming Direction HD GH <span data-content="index"></span></td>
     <td>
-        <span data-content="lichtansteurerunggh"></span>
+        ausgelesen: <pre><span data-content="dimmingdirectionGH"></span></pre>
+        <select class="form-control"
+            data-value="dimmingdirectionGH"
+            data-template-bind='{"attribute": "options", "value": {"data": "dimmingdirection", "value":"value", "content":"content"}}'>
+        </select>
+    </td>
+    <td>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Hex</span>
+            </div>
+            <input type="text" class="form-control" value="---" readonly>
+            <br>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Dec</span>
+            </div>
+            <input type="text" class="form-control" data-value="dimmingdirectionGH">
+        </div>
     </td>
 </tr>
 
